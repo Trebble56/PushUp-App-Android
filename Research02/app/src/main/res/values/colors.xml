@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_bg">#222222</color>
+    <color name="orange_main">#FF9800</color>
+    <color name="grid_line">#555555</color>
+    <color name="sunday_bg">#333333</color>
+    <color name="today_bg">#FF9800</color>
+    <color name="today_text">#000000</color>
+</resources>
