@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 
 class TrainingActivity : AppCompatActivity() {
 
@@ -39,16 +40,16 @@ class TrainingActivity : AppCompatActivity() {
         btnFinish.setOnClickListener {
 
             val prefs = getSharedPreferences("training_data", MODE_PRIVATE)
-            val editor = prefs.edit()
+            prefs.edit {
 
-            val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
-                .format(java.util.Date())
+                val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+                    .format(java.util.Date())
 
-            val currentValue = prefs.getInt(today, 0)
-            val newValue = currentValue + counter
+                val currentValue = prefs.getInt(today, 0)
+                val newValue = currentValue + counter
 
-            editor.putInt(today, newValue)
-            editor.apply()
+                putInt(today, newValue)
+            }
 
             finish()
         }
